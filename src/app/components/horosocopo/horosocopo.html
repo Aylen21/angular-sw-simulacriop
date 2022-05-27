@@ -1,0 +1,56 @@
+
+  <div class="card text-center">
+<div class="card-header">Simulacro</div>
+<div class="card-body">
+  <h5 class="card-title">Filtro con signo y dia</h5>
+  <select
+    name="signo"
+    class="form-select"
+    aria-label="Default select example"
+    [(ngModel)]="signoSeleccionado"
+  >
+    <option [value]="signo.value" *ngFor="let signo of signos" selected>
+      {{ signo.nombre }}
+    </option>
+  </select>
+  <br />
+  <select
+    name="dia"
+    class="form-select"
+    aria-label="Default select example"
+    [(ngModel)]="diaSeleccionado"
+  >
+    <option [value]="dia.value" *ngFor="let dia of dias" selected>
+      {{ dia.nombre }}
+    </option>
+  </select>
+  <br />
+  <div class="d-grid gap-2">
+    <button (click)="buscarHoroscope()" class="btn btn-primary">
+      Buscar
+    </button>
+    <div></div>
+  </div>
+</div>
+</div>
+<br />
+<div class="row">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Descripcion</th>
+      <th scope="col">fecha-rango</th>
+      <th scope="col">fecha-actual</th>
+      <th scope="col">color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ description }}</td>
+      <td>{{ date_range }}</td>
+      <td>{{ current_date }}</td>
+      <td>{{ color }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
